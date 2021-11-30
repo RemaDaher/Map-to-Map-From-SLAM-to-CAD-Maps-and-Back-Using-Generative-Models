@@ -26,7 +26,9 @@ python train.py --project_name AB --dataset DATASET_proc_nopartial --niter 140 -
 ```
 
 ## Testing
-As the model is training, it will test on the testing data.
+- As the model is training, it will test on the testing data.
+- The testing file is taken as is from Anime2clothing and thus will not give you the same results generated using the train.py.
+- Some pretrained models can be found [here](https://drive.google.com/file/d/15ZnQGuzvSYYnfWKbArAU6BZ1NHZNOe4R/view?usp=sharing).
 
 ## Reference
 If you use parts of this code please cite this work:
