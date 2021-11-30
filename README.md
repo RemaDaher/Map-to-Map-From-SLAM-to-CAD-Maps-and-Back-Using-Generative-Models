@@ -1,31 +1,38 @@
 # Map to Map: From SLAM to CAD Maps and Back Using Generative Models
-put the bash scripts in this folder and run the ones of the winning result.
+This is the code implementation of the thesis "Map to Map: From SLAM to CAD Maps and Back Using Generative Models". The code relies on the Anime2clothing repository which is included as part of this code.
 
-the ones that include cropping change dataset_cropping.py to dataset.py
-and vice versa
+## Training Options
+Unzip the dataset file
 
-also to decide on how long to keep the training change in options the epoch mapping
-so at every resolution for how many epochs you would like to stay at this res
+To include cropping in the training use dataset_cropping.py instead of dataset.py
 
-also batch rate by default is 1 decrease depending on processing power (but to do that use all py files from additionalfiles int and double issues)
+To decide on how long to keep the training, change in train_options.py the epoch mapping giving the amount of epochs required at every resolution
 
-for niter and niter_decay depending on the number of iterations put 70% niter and 30% decay. together they are equal the total number of epochs. 
+When running train.py set niter and niter_decay to 70% and 30 % respectively of the total number of epochs.
 
+## For SLAM to CAD (BtoA): 
+- Epoch mapping: Use 32 epoch mapping (400000 epochs for 32 resolution)
+- No cropping (use dataset.py with no cropping)
+```python
+python train.py --project_name BA --dataset DATASET_proc_nopartial_BA_thick --niter 525 --niter_decay 225 &
+```
 
-1. Update test data to include images that have round walls and real images
-2. in folder additional.. in ucl VM run this 
-for BtoA: 
-updatedNode1032cstthickthesisNoPartialBA
-32 epoch mapping (400000 for 32)
-no cropping (use dataset.py with no cropping)
-nohup python train.py --project_name BAaddCroppedTesting --dataset DATASET_proc_nopartial_BA_thick --niter 525 --niter_decay 225 &
+## For CAD to SLAM (AtoB):
+- Restore epoch mapping to how it was (15,30...)
+- Cropping (use dataset.py with cropping)
+```python
+python train.py --project_name AB --dataset DATASET_proc_nopartial --niter 140 --niter_decay 60
+```
 
+## Testing
+As the model is training, it will test on the testing data.
 
-for AtoB:
-thesisNoPartialCropped
-restore epoch mapping to how it was (15,30...)
-cropping (use dataset.py with cropping)
-python train.py --project_name ABaddCroppedTesting --dataset DATASET_proc_nopartial --niter 140 --niter_decay 60
-
-3. for evaluation use this: C:\Users\REMAD\OneDrive\Desktop\RALresubmission\anime2clothing\winning-result\updatedNode1032cstthickthesisNoPartialBA_Results\FinalResultpaper matlab file
-
+## Reference
+If you use parts of this code please cite this work:
+```
+@phdthesis{daher2020map,
+  title={Map to Map: From SLAM to CAD Maps and Back Using Generative Models},
+  author={Daher, Rema},
+  year={2020}
+}
+```
