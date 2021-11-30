@@ -1,14 +1,15 @@
 # Map to Map: From SLAM to CAD Maps and Back Using Generative Models
 This is the code implementation of the thesis "Map to Map: From SLAM to CAD Maps and Back Using Generative Models". The code relies on the Anime2clothing repository which is included as part of this code.
 
-## Training Options
-Unzip the dataset file
-
-To include cropping in the training use dataset_cropping.py instead of dataset.py
-
-To decide on how long to keep the training, change in train_options.py the epoch mapping giving the amount of epochs required at every resolution
-
-When running train.py set niter and niter_decay to 70% and 30 % respectively of the total number of epochs.
+## Preparations and Training Options
+- create invironment: 
+```python 
+conda env create -f environment.yml
+```
+- Unzip the dataset file
+- To include cropping in the training use dataset_cropping.py instead of dataset.py
+- To decide on how long to keep the training, change in train_options.py the epoch mapping giving the amount of epochs required at every resolution
+- When running train.py set niter and niter_decay to 70% and 30 % respectively of the total number of epochs.
 
 ## For SLAM to CAD (BtoA): 
 - Epoch mapping: Use 32 epoch mapping (400000 epochs for 32 resolution)
