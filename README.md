@@ -5,6 +5,7 @@ This is the code implementation of the thesis "Map to Map: From SLAM to CAD Maps
 - create invironment: 
 ```python 
 conda env create -f environment.yml
+conda activate rema
 ```
 - Unzip the dataset file
 - To include cropping in the training use dataset_cropping.py instead of dataset.py
@@ -15,7 +16,7 @@ conda env create -f environment.yml
 - Epoch mapping: Use 32 epoch mapping (400000 epochs for 32 resolution)
 - No cropping (use dataset.py with no cropping)
 ```python
-python train.py --project_name BA --dataset DATASET_proc_nopartial_BA_thick --niter 525 --niter_decay 225 &
+python train.py --project_name BA --dataset DATASET_proc_nopartial_BA_thick --niter 525 --niter_decay 225
 ```
 
 ## For CAD to SLAM (AtoB):
