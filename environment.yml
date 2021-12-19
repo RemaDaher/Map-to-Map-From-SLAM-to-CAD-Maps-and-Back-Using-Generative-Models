@@ -1,4 +1,4 @@
-name: rema
+name: map2map
 channels:
   - pytorch
   - conda-forge
