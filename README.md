@@ -1,12 +1,12 @@
 # Map to Map: From SLAM to CAD Maps and Back Using Generative Models
 
-![teaser](./imgs/Motivation.png?raw=true)
+<img src="./imgs/Motivation.png" width="600">
 
 This is the code implementation of the paper [Map to Map: From SLAM to CAD Maps and Back Using Generative Models](https://scholarworks.aub.edu.lb/handle/10938/22162). The code relies on the Anime2clothing repository which is included as part of this code. 
 
 Flowchart of proposed system is shown with the SLAM-to-CAD application of Section III and the CAD-to-SLAM application of Section IV in the paper:
 
-![Architecture](./imgs/Architecture.png?raw=true)
+<img src="./imgs/Architecture.png" width="700">
 
 
 ## Preparations and Training Options
