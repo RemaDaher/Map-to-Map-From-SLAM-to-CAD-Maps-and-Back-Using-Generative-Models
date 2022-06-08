@@ -1,5 +1,6 @@
 # Map to Map: From SLAM to CAD Maps and Back Using Generative Models
 This is the code implementation of the thesis "Map to Map: From SLAM to CAD Maps and Back Using Generative Models". The code relies on the Anime2clothing repository which is included as part of this code.
+
 ![teaser](./imgs/Motivation.png?raw=true)
 
 ## Preparations and Training Options
